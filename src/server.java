@@ -18,10 +18,10 @@ public class server {
             //El servidor espera dentro infinito la solicitud de conexión de un cliente
             for(;;){
                 Socket cl = s.accept();
-                System.out.println("Conexión establecida desde " + cl.getInetAddress() + ":" + cl.getPort());
+                System.out.println("Conexión establecida desde " + cl.getInetAddress() + ":" + cl.getPort() + '\n');
 
                 //Se define el mensaje enviar y ligamos un PrintWriter a un flujo de salida de carácter
-                String mensaje = "Hola mundo";
+                String mensaje = "Noe Rames Gonzalez Llamosas - 6CV4 - Aplicaciones para comunicaciones en red";
                 PrintWriter pw = new PrintWriter(new OutputStreamWriter(cl.getOutputStream()));
                 pw.println(mensaje);
                 pw.flush();
