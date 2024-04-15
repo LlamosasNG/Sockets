@@ -1,9 +1,9 @@
-//Importación de bibliotecas
+package funcionalidadTipoECO;//Importación de bibliotecas
 import java.net.*;
 import java.io.*;
 
 
-public class server {
+public class Server {
     public static void main(String args[]){
 
         try {

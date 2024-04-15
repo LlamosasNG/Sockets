@@ -1,8 +1,8 @@
-//Importación de bibliotecas
+package funcionalidadTipoECO;//Importación de bibliotecas
 import java.net.*;
 import java.io.*;
 
-public class client {
+public class Client {
     public static void main(String args[]){
         //Se crea un bloque try-catch y se define un flujo de lectura de la entrada estándar
         try{
