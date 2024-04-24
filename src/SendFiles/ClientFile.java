@@ -42,11 +42,9 @@ public class ClientFile {
                         n = dis.read(b);
                         dos.write(b, 0, n);
                         dos.flush();
-                        enviados +
-                                  = n;
+                        enviados += n;
                         porcentaje = (int) (enviados * 100 / tam);
                         System.out.println("Enviado: " + porcentaje + "%\r");
-
                         if(porcentaje == 100) {
                             System.out.println("\n\nArchivos enviados");
                         }
