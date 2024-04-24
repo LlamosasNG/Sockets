@@ -1,4 +1,4 @@
-package envíoDeArchivos;
+package SendFiles;
 
 import java.net.*;
 import java.io.*;
@@ -16,7 +16,6 @@ public class ServerFile {
                 System.out.println("Conexión establecida desde " + cl.getInetAddress() + ":" + cl.getPort());
 
                 DataInputStream dis = new DataInputStream(cl.getInputStream());
-
                 int numArchivos = dis.readInt(); // Leemos la cantidad de archivos que el cliente enviará
 
                 for (int i = 0; i < numArchivos; i++) {
@@ -36,7 +35,7 @@ public class ServerFile {
                         recibidos += n;
                         porcentaje = (int) (recibidos * 100 / tam);
                         if (porcentaje == 100) {
-                            System.out.println("\n\nArchivo recibido");
+                            System.out.println("\nArchivos recibidos");
                         }
                     }
                     dos.close();

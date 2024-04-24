@@ -19,9 +19,8 @@ public class ClientFile {
 
             if (r == JFileChooser.APPROVE_OPTION) {
                 File[] files = jf.getSelectedFiles();
-                // Enviamos la cantidad de archivos que vamos a enviar
-                DataOutputStream dos = new DataOutputStream(cl.getOutputStream());
-                dos.writeInt(files.length); // Se envia la cantidad de archivos seleccionada
+                DataOutputStream dos = new DataOutputStream(cl.getOutputStream()); //Se crea un flujo orientado a bytes para enviar los datos del archivo por el socket
+                dos.writeInt(files.length); //Se envian los archivos seleccionados
                 dos.flush();
 
                 for (File file : files) {
@@ -29,7 +28,7 @@ public class ClientFile {
                     String nombre = file.getName(); //Nombre
                     long tam = file.length(); //Tamaño
 
-                    DataInputStream dis = new DataInputStream(new FileInputStream(archivo));
+                    DataInputStream dis = new DataInputStream(new FileInputStream(archivo)); //Se crea un flujo orientado a bytes para leer los datos del archivo
                     dos.writeUTF(nombre);
                     dos.flush();
                     dos.writeLong(tam);
@@ -43,11 +42,15 @@ public class ClientFile {
                         n = dis.read(b);
                         dos.write(b, 0, n);
                         dos.flush();
-                        enviados += n;
+                        enviados +
+                                  = n;
                         porcentaje = (int) (enviados * 100 / tam);
                         System.out.println("Enviado: " + porcentaje + "%\r");
+
+                        if(porcentaje == 100) {
+                            System.out.println("\n\nArchivos enviados");
+                        }
                     }
-                    System.out.println("\n\nArchivo enviado");
                     dis.close();
                 }
                 dos.close();

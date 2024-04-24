@@ -1,4 +1,4 @@
-package funcionalidadTipoECO;//Importación de bibliotecas
+package ECOTypeFunctionality;//Importación de bibliotecas
 import java.net.*;
 import java.io.*;
 
