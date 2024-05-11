@@ -15,20 +15,23 @@ public class ServerSerialization {
                 Socket cl = s.accept();
                 System.out.println("Conexión establecida desde " + cl.getInetAddress() + ":" + cl.getPort());
 
-                // Deserializar el objeto desde el InputStream del socket
+                // Deserializar el objeto
                 Person personDes;
                 ObjectInputStream des = new ObjectInputStream(cl.getInputStream());
                 personDes = (Person) des.readObject();
-                System.out.println("Archivo recibido correctamente");
+                System.out.println("Archivo recibido");
 
                 // Mostrar los datos del objeto deserializado
-                System.out.println("Objeto deserializado:");
-                System.out.println("Nombre: " + personDes.getName());
-                System.out.println("Apellido: " + personDes.getLastName());
-                System.out.println("Edad: " + personDes.getAge());
-                System.out.println("Usuario: " + personDes.getUser());
-                System.out.println("Contraseña: " + personDes.getPassword());
+                System.out.println("\n\nObjeto deserializado correctamente:");
+                System.out.println("Name: " + personDes.name);
+                System.out.println("LastName: " + personDes.lastname);
+                System.out.println("Age: " + personDes.age);
+                System.out.println("User: " + personDes.user);
+                System.out.println("Password: " + personDes.password);
+                System.out.println("Cash: " + personDes.cash);
+                System.out.println("Verified: " + personDes.verified);
 
+                des.close();
                 cl.close();
             }
         } catch (IOException | ClassNotFoundException e) {

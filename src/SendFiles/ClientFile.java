@@ -45,7 +45,6 @@ public class ClientFile {
                         enviados += n;
                         porcentaje = (int) (enviados * 100 / tam);
                         System.out.println("Enviado: " + porcentaje + "%\r");
-
                         if(porcentaje == 100) {
                             System.out.println("\n\nArchivos enviados");
                         }
